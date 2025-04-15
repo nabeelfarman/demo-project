@@ -1,0 +1,39 @@
+<form [formGroup]="form">
+    <div formGroupName="softwareDistance">
+      <label>Software Distance:</label>
+      <input formControlName="min" type="number">
+      <input formControlName="max" type="number">
+    </div>
+  
+    <div formGroupName="softwareLight">
+      <label>Software Light:</label>
+      <input formControlName="min" type="number">
+      <input formControlName="max" type="number">
+    </div>
+  
+    <div formArrayName="hardwareCameras">
+      <div *ngFor="let camera of cameras.controls; let i = index; trackBy: trackByIndex">
+        <div [formGroupName]="i">
+          <div formGroupName="distance">
+            <label>Camera Distance:</label>
+            <input formControlName="min" type="number">
+            <input formControlName="max" type="number">
+          </div>
+          <div formGroupName="light">
+            <label>Camera Light:</label>
+            <input formControlName="min" type="number">
+            <input formControlName="max" type="number">
+          </div>
+          <button type="button" (click)="removeCamera(i)" class="remove-btn">Remove Camera</button>
+        </div>
+      </div>
+      <button type="button" (click)="addCamera()">Add Camera</button>
+    </div>
+  
+    <button type="button" (click)="checkCoverage()">Check Coverage</button>
+  </form>
+  
+  <div *ngIf="result !== null">
+    <p>{{ result ? 'Coverage is sufficient.' : 'Coverage is insufficient.' }}</p>
+  </div>
+  

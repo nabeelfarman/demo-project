@@ -1,0 +1,80 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+  font-family: Arial, sans-serif;
+
+  label {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    display: block;
+  }
+
+  input[type="number"] {
+    width: 100%;
+    padding: 0.4rem;
+    margin-bottom: 1rem;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    box-sizing: border-box;
+  }
+
+  .form-group,
+  .camera-group {
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+  }
+
+  .camera-group {
+    margin-bottom: 1rem;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    background-color: #007acc;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #005f9e;
+    }
+
+    &:not(:last-child) {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .remove-btn {
+    background-color: #e74c3c;
+    margin-bottom: 2px;
+
+    &:hover {
+      background-color: #c0392b;
+    }
+  }
+
+  .camera-wrapper {
+    border-top: 1px dashed #ccc;
+    padding-top: 1rem;
+    margin-top: 1rem;
+  }
+}
+
+p {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 1rem;
+}
